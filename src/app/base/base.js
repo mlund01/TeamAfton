@@ -1,4 +1,4 @@
-angular.module( 'orderCloud' )
+angular.module( 'teamAfton' )
 
 	.config( BaseConfig )
 	.controller( 'BaseCtrl', BaseController )

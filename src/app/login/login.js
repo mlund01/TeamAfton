@@ -1,4 +1,4 @@
-angular.module( 'orderCloud' )
+angular.module( 'teamAfton' )
 
 	.config( LoginConfig )
 	.controller( 'LoginCtrl', LoginController )
@@ -17,15 +17,8 @@ function LoginConfig( $stateProvider ) {
 	});
 }
 
-function LoginController( $state, Credentials ) {
+function LoginController( $state ) {
 	var vm = this;
 
-	vm.submit = function( ) {
-		Credentials.Get( vm.credentials ).then(
-			function() {
-				$state.go( 'base.home' );
-			}).catch(function( ex ) {
-				console.dir( ex );
-			});
-	};
+
 }

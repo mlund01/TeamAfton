@@ -32,7 +32,11 @@ module.exports = {
 	build: build,
 	compile: compile,
 	fonts: [
-		source + 'assets/fonts/**.*'
+		source + 'assets/fonts/**.*',
+		'vendor/**/fonts/*',
+		'!vendor/**/dist',
+		'!vendor/**/fonts',
+		'vendor/flat-ui-pro/dist/fonts/**/*'
 	],
 	htmlTemplates: [
 		source + '**/*.html',
@@ -51,6 +55,7 @@ module.exports = {
 	temp: temp,
 	root: root,
 	import_less: [
+		source + 'app/dependencies/**/*.less',
 		'vendor/font-awesome/less/font-awesome.less',
 		source + 'app/**/*.less'
 	],

@@ -62,6 +62,8 @@ gulp.task('b_m:styles', function() {
     return gulp
         .src([config.temp + 'bowerStyles.css', config.temp + 'lessStyles.css', config.temp + 'sassStyles.css', config.temp + 'appCss.css'])
         .pipe(replace('../fonts/', 'fonts/'))
+        .pipe(replace('/glyphicons/', '/'))
+        .pipe(replace('/lato/', '/'))
         .pipe(concat(currVersion + '.css'))
         .pipe(gulp.dest(config.build + 'assets'))
         .pipe(browserSync.stream())
@@ -83,7 +85,7 @@ gulp.task('b_m:assets', function() {
 });
 
 gulp.task('b_m:fonts', function() {
-    return gulp.src('vendor/**/fonts/*', '!vendor/**/dist')
+    return gulp.src(config.fonts)
         .pipe(flatten())
         .pipe(gulp.dest(config.build + 'assets/fonts'))
 });
